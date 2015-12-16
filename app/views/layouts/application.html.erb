@@ -7,7 +7,21 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<header>
+		<DIV  class="col-xs-3">
+			LOGO	
+		</DIV>
+		<DIV  class="col-xs-4">
+			Splurting out unsoliticited advice about entrepreneurship since 2014
+		</DIV>
+		<DIV class= "col-xs-5">
+			<%= link_to 'Contribute', '#' %>
+			<%= link_to 'About', '#' %>
+		</DIV>
+	</header>
 
+	<br class="clear" /> 
+		
 <%= yield %>
 
 </body>
