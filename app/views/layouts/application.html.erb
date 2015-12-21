@@ -9,6 +9,7 @@
 <body>
 	<header>
 		<DIV  class="col-xs-3">
+			<%= link_to root_path, :class => 'logo' do %>
 			<DIV class = "circle">
 				<br />
 				You know
@@ -17,13 +18,14 @@
 				<br />
 				to code
 			</DIV>
+			<% end %>
 			
 		</DIV>
 		<DIV  class="col-xs-4 slogan">
 			Splurting out unsoliticited advice about entrepreneurship since 2014
 		</DIV>
 		<DIV class= "col-xs-5 links">
-			<%= link_to 'Contribute', '#' %>
+			<%= link_to 'Contribute', new_quote_path %>
 			<%= link_to 'About', '#' %>
 		</DIV>
 	</header>
@@ -33,7 +35,7 @@
 	<div class="footer">
 		<div class="container">
 			<div class="col-xs-6">
-			<%= link_to "This isn't enough, I need more", "#", :class => 'next-quote' %>
+			<%= link_to "This isn't enough, I need more", root_path, :class => 'next-quote' %>
 
 			</div>
 			<div class="col-xs-6 footer-blurb">
@@ -41,7 +43,7 @@
 				Want to build your own splurty Web App - <a href="http://thefirehoseproject.com">Learn how to code here</a> 
 			</div>
 
-			<p class= "text-muted">Place Sticky Footer Here></p>
+			<p class= "text-muted">Place Sticky Footer Here.</p>
 		</div>
 	</div>
 
