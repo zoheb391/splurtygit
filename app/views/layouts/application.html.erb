@@ -8,8 +8,10 @@
 </head>
 <body>
 	<header>
+		
 		<DIV  class="col-xs-3">
 			<%= link_to root_path, :class => 'logo' do %>
+			
 			<DIV class = "circle">
 				<br />
 				You know
@@ -21,14 +23,42 @@
 			<% end %>
 			
 		</DIV>
+		
 		<DIV  class="col-xs-4 slogan">
 			Splurting out unsoliticited advice about entrepreneurship since 2014
 		</DIV>
+		
 		<DIV class= "col-xs-5 links">
-			<%= link_to 'Contribute', new_quote_path %>
-			<%= link_to 'About', '#' %>
+			<!-- Button trigger modal -->
+     		 <%= link_to 'Contribute', '#', :data => {:toggle => 'modal', :target => '#myModal'} %>
+				<%= link_to 'About', about_path %>
 		</DIV>
 	</header>
+
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title" id="myModalLabel">Contribute Your Quote</h4>
+        </div>
+        <%= simple_form_for Quote.new do |f| %>
+        <div class="modal-body">
+        	 <%= f.input :saying %>
+            <%= f.input :author %>          
+        </div>	
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <%= f.submit 'Create', :class => 'btn btn-danger' %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
 	<hr />
 
 	<br class="clear" /> 

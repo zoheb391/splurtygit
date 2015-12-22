@@ -3,9 +3,6 @@ def index
 	@quote = Quote.order("RANDOM()").first
 end
 
-def new
-	@quote = Quote.new
-end
 def create
 	@quote = Quote.create(quote_params)
     if @quote.invalid?
@@ -13,6 +10,10 @@ def create
     end
 	redirect_to root_path
 end
+
+def about
+end
+
 
 private
 
